@@ -1,0 +1,44 @@
+package week3;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.StringTokenizer;
+
+
+public class Q10250 {
+	public static void main(String[] args) throws Exception {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st;
+		
+		int T = Integer.parseInt(br.readLine());	//테스트 데이터
+		
+		int height =0;	//호텔 층 수
+		int width =0;	//호텔 한 층당 방의 수
+		int n=0;		//n번째 손님
+		String[] result = new String[T];	//결과를 담는 배열
+		
+		for (int i = 0; i < T; i++) {
+			st = new StringTokenizer(br.readLine());
+			height = Integer.parseInt(st.nextToken());
+			width = Integer.parseInt(st.nextToken());
+			n = Integer.parseInt(st.nextToken());
+
+			int len = (int) (Math.log10(width));
+			System.out.println("len= " + len);
+			if (height >= n) {
+				result[i] = "";
+				result[i] += n + "";
+				result[i] += "0".repeat(len) + "1";
+			} else {
+				result[i] = "";
+				result[i] += (n % height) + "";
+				result[i] += "0".repeat(len) + ((n / height) + 1);
+			}
+		}
+		
+		Arrays.toString(result);
+		
+	}
+}

@@ -1,0 +1,48 @@
+package week4;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Q2511 {
+	public static void main(String[] args) throws Exception{
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st =  new StringTokenizer(br.readLine());
+		
+		int len = 10;
+		int[] arrA = new int[len]; 
+		int[] arrB = new int[len];
+		
+		int scoreA=0, scoreB=0, same=0;
+		boolean isAWin=true;
+		
+		for (int i=0; i<len; i++) {
+			
+			if (arrA[i]>arrB[i]) {
+				scoreA++;
+				isAWin = true;
+			} else if (arrA[i]<arrB[i]) {
+				scoreB++;
+				isBWin = false;
+			} else {
+				same++;
+			}
+			
+		}
+		
+		String result="B";
+		if (same == len) {
+			result = "D";
+		} else if (scoreA>scoreB) {
+			result = "A";
+		} else if (scoreA<scoreB) {
+			result = "B";
+		} else if (isAWin) {
+			result = "A";
+		}
+		System.out.println(scoreA + " " + scoreB);
+		System.out.println(result);
+		
+	}
+}

@@ -8,6 +8,8 @@ markOccurrences=false
 org.eclipse.jdt.internal.ui.navigator.layout=2
 org.eclipse.jdt.internal.ui.navigator.librariesnode=true
 org.eclipse.jdt.ui.formatterprofiles.version=21
+org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+org.eclipse.jdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates><template autoinsert\="true" context\="java" deleted\="false" description\="\uBC31\uC900 \uBB38\uC81C\uD480\uC774\uC6A9" enabled\="true" name\="qmain">public static void main(String[] args) throws Exception {&\#13;\r\n\t\t&\#13;\r\n\t\tBufferedReader br \= new BufferedReader(new InputStreamReader(System.in));&\#13;\r\n\t\t&\#13;\r\n\t\tStringTokenizer st \=  new StringTokenizer(br.readLine());&\#13;\r\n\t\t&\#13;\r\n\t}</template></templates>
 spelling_locale_initialized=true
 useAnnotationsPrefPage=true
 useQuickDiffPrefPage=true

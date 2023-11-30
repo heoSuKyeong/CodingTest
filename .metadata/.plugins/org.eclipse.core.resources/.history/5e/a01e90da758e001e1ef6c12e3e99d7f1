@@ -1,0 +1,16 @@
+package week6;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Q30642 {
+//아이그루스와 화장실
+	public static void main(String[] args) throws Exception {
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		StringTokenizer st = new StringTokenizer(br.readLine());
+
+	}
+}

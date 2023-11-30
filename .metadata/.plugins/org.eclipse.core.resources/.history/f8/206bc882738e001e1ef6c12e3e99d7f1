@@ -1,0 +1,11 @@
+package week6;
+
+public class Q1100 {
+	public static void main(String[] args) throws Exception {
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		StringTokenizer st = new StringTokenizer(br.readLine());
+
+	}
+}

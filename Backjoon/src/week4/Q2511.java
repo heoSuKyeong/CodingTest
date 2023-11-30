@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class Q2511 {
+//Ä«µå³îÀÌ
 	public static void main(String[] args) throws Exception{
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

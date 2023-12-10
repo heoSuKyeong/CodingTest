@@ -1,0 +1,29 @@
+package week7;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Q24467 {
+//윳 놀이
+/*
+ 0은 윷가락 뒷면, 1은 윷가락 앞면을 나타낸다.
+뒷면이 하나인 경우 말을 한 칸 전진시킨다.
+뒷면이 둘인 경우 말을 두 칸 전진시킨다.
+뒷면이 셋인 경우 말을 세 칸 전진시킨다.
+모두 뒷면인 경우 말을 네 칸 전진시킨 뒤, 윷을 추가로 던진다.
+모두 앞면인 경우 말을 다섯 칸 전진시킨 뒤, 윷을 추가로 던진다.
+윷판을 정해진 경로로 한 바퀴를 돌아 윷판의 오른쪽 아래에 도착한 뒤 한 칸 더 움직여야  완주할 수 있다.	
+
+단, 빈 원으로 표시된 위치에 말이 놓이면 상대적으로 짧은 길로 가야한다. 그 위치에 놓이지 않는다면 상대적으로 먼 길로 가야 한다.
+빈 원 위치 : 5,8,10,15
+
+
+*/	
+	public static void main(String[] args) throws Exception {
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+
+	}
+
+}

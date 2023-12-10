@@ -1,0 +1,90 @@
+package week7;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
+public class Q24467 {
+//윳 놀이
+	/*
+	 * 0은 윷가락 뒷면, 1은 윷가락 앞면을 나타낸다. 뒷면이 하나인 경우 말을 한 칸 전진시킨다. : 도(3) 뒷면이 둘인 경우 말을 두 칸
+	 * 전진시킨다. : 개(2) 뒷면이 셋인 경우 말을 세 칸 전진시킨다. : 걸 (1) 모두 뒷면인 경우 말을 네 칸 전진시킨 뒤, 윷을 추가로
+	 * 던진다. : 걸 (0) 모두 앞면인 경우 말을 다섯 칸 전진시킨 뒤, 윷을 추가로 던진다. : 모 (4) 윷판을 정해진 경로로 한 바퀴를
+	 * 돌아 윷판의 오른쪽 아래에 도착한 뒤 한 칸 더 움직여야 완주할 수 있다. 마지막 입력은 도, 개, 걸 중 하나로 주어진다.
+	 * 
+	 * 단, 빈 원으로 표시된 위치에 말이 놓이면 상대적으로 짧은 길로 가야한다. 그 위치에 놓이지 않는다면 상대적으로 먼 길로 가야 한다. 빈
+	 * 원 위치 : 5,8,10,15
+	 * 
+	 * 
+	 */
+
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+		int[] values = { 21, 0 };
+
+		int count = 0;
+
+		for (int i = 0; i < 10; i++) {
+
+			long a = br.readLine().chars().filter(c -> c == '0').count();
+
+			test(values, a);
+
+			count++;
+
+			while (a == 0 || a == 4) {
+				a = br.readLine().chars().filter(c -> c == '0').count();
+
+				test(values, a);
+
+				count++;
+
+				if (count > 49) {
+					break;
+				}
+
+			}
+
+			if (count > 49) {
+				break;
+			}
+
+		}
+
+		if (values[0] <= 0) {
+			bw.write("WIN");
+		} else {
+			bw.write("LOSE");
+		}
+
+		bw.flush();
+		bw.close();
+		br.close();
+	}
+
+	static void test(int[] values, long a) {
+
+		values[0] = a == 1 ? values[0] - 1
+				: a == 2 ? values[0] - 2 : a == 3 ? values[0] - 3 : a == 4 ? values[0] - 4 : values[0] - 5;
+
+		if (values[1] == 0) {
+			if (values[0] == 16) {
+				values[0] = 12;
+				values[1]++;
+			} else if (values[0] == 11) {
+				values[0] = 7;
+				values[1]++;
+			}
+
+		} else if (values[1] == 1) {
+			if (values[0] == 9) {
+				values[0] = 4;
+				values[1]++;
+			}
+		}
+	}
+
+}

@@ -1,0 +1,71 @@
+package week7;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.List;
+import java.util.StringTokenizer;
+
+public class Q20188 {
+//등산 마니아
+/*
+입력 예제
+3
+1 2
+2 3
+*/	
+	static List<Integer>[] tree;
+	static int subTree[];	
+	static boolean visited[];
+	
+	public static void main(String[] args) throws Exception {
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		int n = Integer.parseInt(br.readLine());
+		
+		tree = new List[n+1];
+		for (int i=0; i<n; i++) {
+			tree[i] = ArrayList<>();
+		}
+		
+		for (int i=0; i<n-1; i++) {	//인접리스트를 트리로 표현
+			StringTokenizer st = new StringTokenizer(br.readLine());
+			
+			int start = Integer.parseInt(st.nextToken());
+			int end = Integer.parseInt(st.nextToken());
+			
+			tree[start].add(end);
+			tree[end].add(start);
+		}
+		
+		subTree = new int[n+1];		//i번째 노드를 루트노드로 하는 서브트리에 포함되는 노드의 수
+		for (int i=1; i<=n; i++	 ) {
+			subTree[i] = 1;
+		}
+		
+		visited = new boolean[n+1];
+		visited[1] = true;
+		dfs(1);
+		
+		
+		
+		
+
+	}
+
+	private static int dfs(int index) {	//깊이 우선 탐색을 통해 루트노드부터 리프노드까지 내려가며 subTree 값을 채운다.
+		
+		for(Integer node : tree[index]) {
+			
+			if(visited[node]) {
+				continue;
+			}
+			visited[node] = true;
+			subTree[index] += dfs(node);
+		}
+		return subTree[index];
+		
+	}
+	
+	
+}
